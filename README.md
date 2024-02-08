@@ -63,7 +63,7 @@ Follow the instructions to run it on your system
     # -b = beam size :: int
     # -n = best n candidates (b>=n) :: int
     # -r = rerank :: boolean (1 or 0)
-    bash transliterate_word.sh -l 'ne' -i 'source/input.txt' -b 5 -n 5 -r 1
+    bash transliterate_sentence.sh -l 'ne' -i 'source/input.txt' -b 5 -n 5 -r 1
 
     ```
 
