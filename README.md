@@ -6,14 +6,15 @@
 
 Follow the instructions to run it on your system
 
-1. Installation
+1. Install the necessary libraries
 
     ```
-    ## Install the necessary libraries
-    pip3 install sacremoses pandas mock sacrebleu tensorboardX pyarrow indic-nlp-library xformers triton
-    pip3 install indic-nlp-library
+    pip3 install sacremoses pandas mock sacrebleu tensorboardX pyarrow indic-nlp-library xformers triton gdown
+    ```
 
-    ## Install fairseq from source
+2. Install fairseq from source
+    
+    ```
     git clone https://github.com/pytorch/fairseq.git
     cd fairseq
 
@@ -22,7 +23,7 @@ Follow the instructions to run it on your system
     ```
 
 
-2. Clone the NepaliXlit repository (to setup and run command line inference)
+3. Clone the NepaliXlit repository (to setup and run command line inference)
 
     ```
     git clone https://github.com/Supriya090/NepaliXlit.git
@@ -30,7 +31,7 @@ Follow the instructions to run it on your system
     ```
 
 
-3. Download the models
+4. Download the models
     ```
     # Download nepalixlit
     gdown 1v0RQU9BMhQJNzsesp_2BN1sImCbdw77d --output nepalixlit-en-ne.zip
@@ -42,20 +43,20 @@ Follow the instructions to run it on your system
     ```
 
 
-4. Creating the dir for saving input and output files
+5. Creating the dir for saving input and output files
 
     ```
     mkdir source 
     mkdir output
     ```
 
-5. Saving the input words to source file
+6. Saving the input words to source file
 
     ```
     echo "namaste k xa haalkhabar" >> source/input.txt
     ```
 
-6. Running the inference script
+7. Running the inference script
 
     ```
     # -l = language code :: str
@@ -67,7 +68,7 @@ Follow the instructions to run it on your system
 
     ```
 
-7. Display the output 
+8. Display the output 
 
     ```
     cat output/final_transliteration.txt
