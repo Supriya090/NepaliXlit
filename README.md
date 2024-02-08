@@ -1,6 +1,6 @@
 # Nepali Transliteration
 
-**Adaptaion of [IndicXlit](https://github.com/AI4Bharat/IndicXlit) for Nepali systems.**
+**Adaptation of [IndicXlit](https://github.com/AI4Bharat/IndicXlit) for Nepali systems.**
 
 <hr>
 
