@@ -6,7 +6,7 @@ nbest=$4
 
 
 fairseq-interactive corpus-bin \
-  --path transformer/checkpoint_best.pt \
+  --path nepalixlit.pt \
   --task translation_multi_simple_epoch \
   --beam $beam \
   --nbest $nbest \
