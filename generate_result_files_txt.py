@@ -183,7 +183,7 @@ translation_str = f.read()
 
 dict_output = post_process(translation_str, lang_abr, _rescore)
 
-f_output = open('output/final_transliteration.txt', 'a')
+f_output = open('output/final_transliteration.txt', 'w')
 # for d in dict_output:
 #     f_output.write(''.join(d.split(' ')[1:]) + '\t[' + ', '.join(dict_output[d]) + ']\n')
 # f_output.write("------------------")
