@@ -9,7 +9,7 @@ Follow the instructions to run it on your system
 1. Install the necessary libraries
 
     ```
-    pip3 install sacremoses pandas mock sacrebleu tensorboardX pyarrow indic-nlp-library xformers triton gdown
+    pip3 install sacremoses torch==2.2.0 pandas mock sacrebleu tensorboardX pyarrow indic-nlp-library xformers triton gdown
     ```
 
 2. Install fairseq from source
@@ -26,7 +26,7 @@ Follow the instructions to run it on your system
 3. Clone the NepaliXlit repository (to setup and run command line inference)
 
     ```
-    git clone https://github.com/Supriya090/NepaliXlit.git
+    c
     cd NepaliXlit
     ```
 
