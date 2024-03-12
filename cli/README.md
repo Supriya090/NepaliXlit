@@ -4,7 +4,7 @@
 
 <hr>
 
-Follow the instructions to run it on your system
+Follow the instructions to run it on your system in CLI
 
 1. Install the necessary libraries
 
@@ -26,8 +26,8 @@ Follow the instructions to run it on your system
 3. Clone the NepaliXlit repository (to setup and run command line inference)
 
     ```
-    c
-    cd NepaliXlit
+    git clone https://github.com/Supriya090/NepaliXlit.git
+    cd NepaliXlit/cli
     ```
 
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transliteration App</title>
+    <style>
+        body {
+            font-family: sans-serif; /* Change main font to sans-serif */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            margin: 10px 0px 40px 0px;
+            padding: 10px;
+            font-size: medium;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: medium;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+            border: 2px solid #f3f3f3; /* Light grey */
+            border-top: 2px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .output-section {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        .time-taken {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NepaliXlit</h1>
+        <div class="input-section">
+            <textarea id="textInput" rows="10" cols="50" placeholder="Enter text..."></textarea>
+            <button onclick="transliterate()">Transliterate</button>
+            <span id="loading" class="spinner" style="display: none;"></span>
+        </div>
+        <div class="output-section">
+            <p id="output"></p>
+            <p id="timeTaken" class="time-taken"></p>
+        </div>
+    </div>
+
+    <script>
+        function transliterate() {
+            // Show the loading spinner
+            document.getElementById("loading").style.display = "inline-block";
+
+            var inputText = document.getElementById("textInput").value;
+            fetch('/transliterate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Hide the loading spinner
+                document.getElementById("loading").style.display = "none";
+
+                console.log(data)
+                document.getElementById("output").innerText = "Transliteration: " + data.translit.ne;
+                document.getElementById("timeTaken").innerText = "Time taken: " + (parseFloat(data.time_taken)).toFixed(2) + " seconds"
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
