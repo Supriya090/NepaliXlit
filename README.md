@@ -22,7 +22,7 @@ Follow the instructions to run the app on your system
 3. Install the necessary dependencies
 
     ```
-    pip install -r app/dependencies.txt
+    pip install -r dependencies.txt
     ```
 
 4. Run the application
