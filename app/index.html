@@ -8,6 +8,13 @@
         body {
             font-family: sans-serif; /* Change main font to sans-serif */
         }
+
+        #copyButton {
+            margin-left: 10px; /* Add space between the two buttons */
+            font-size: 14px; /* Decrease font size */
+            padding: 5px 10px; /* Decrease padding */
+            background-color: #888;
+        }
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -73,6 +80,7 @@
         </div>
         <div class="output-section">
             <p id="output"></p>
+            <button onclick="copyTransliteratedText()" id="copyButton" style="display: none;">Copy</button>
             <p id="timeTaken" class="time-taken"></p>
         </div>
     </div>
@@ -80,7 +88,9 @@
     <script>
         function transliterate() {
             // Show the loading spinner
-            document.getElementById("loading").style.display = "inline-block";
+            document.getElementById("loading").style.display = "inline";
+            document.getElementById("copyButton").innerText = "Copy";
+
 
             var inputText = document.getElementById("textInput").value;
             fetch('/transliterate', {
@@ -100,6 +110,20 @@
                 document.getElementById("timeTaken").innerText = "Time taken: " + (parseFloat(data.time_taken)).toFixed(2) + " seconds"
             })
             .catch(error => console.error('Error:', error));
+            document.getElementById("copyButton").style.display = "inline-block";
+        }
+
+        function copyTransliteratedText() {
+            var transliteratedText = document.getElementById("output").innerText;
+            transliteratedText = transliteratedText.replace("Transliteration: ", "");
+            var tempInput = document.createElement("textarea");
+            tempInput.value = transliteratedText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            document.getElementById("copyButton").innerText = "Copied";
+            // alert("Transliterated text copied to clipboard!");
         }
     </script>
 </body>
