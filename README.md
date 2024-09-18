@@ -38,3 +38,7 @@ Follow the instructions to run the app on your system
 <hr>
 
 ![webapp screenshot](app/webapp_ss.png)
+
+<hr>
+
+I wrote a blog about how I built it. Read it [here](https://supriyakhadka.medium.com/building-your-own-indic-transliterator-718d2e8f17f4).
